@@ -29,7 +29,6 @@ module.exports = async function (req, res) {
     const theme = "light";
     const moduleForum = process.env.MODULE_FORUM ||query.module_forum || "off";
     const moduleGroups = process.env.MODULE_GROUPS ||query.module_groups ||"off";
-    const moduleVideochat = process.env.MODULE_VIDEOCHAT ||query.module_videochat ||"off";
     const extraHead = "";
     
     let page = query.page;
@@ -53,8 +52,7 @@ module.exports = async function (req, res) {
                 theme,
                 stream_host: streamHost,
                 module_forum: moduleForum,
-                module_groups: moduleGroups,
-                module_videochat: moduleVideochat
+                module_groups: moduleGroups
             }
         )
     );
