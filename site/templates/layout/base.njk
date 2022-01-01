@@ -104,9 +104,11 @@
         </ul>
     </div>
     <div class="groups-controls">
-        <div class="groups-notifications private-feature d-none">
+    <!--
+        <div class="groups-notifications private-feature">
             <graphjs-notifications target-profile="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile?{% endif %}id=[[id]]" target-feed-item="{% if (goal==="show") %}/?page=feed&{% else %}/{{ name }}/feed?{% endif %}id=[[id]]" target-messages="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages{% endif %}" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-notifications>
         </div>
+    -->
         <graphjs-auth target="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile?{% endif %}id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-auth>
     </div>
 </nav>
