@@ -46,7 +46,7 @@ const host = cmd.host || null;
 const streamHost = cmd.stream_host || null;
 const description = (cmd.hasOwnProperty('description') && cmd.description) || '';
 const remoteUrl = cmd.git || '';
-const modules = cmd.modules.split(",") || '';
+const modules = (cmd.hasOwnProperty('modules') && cmd.modules.split(",")) || '';
 const extraHead = (cmd.hasOwnProperty('extra_head') && cmd.description) || '';
 
 var moduleForum = "off";
