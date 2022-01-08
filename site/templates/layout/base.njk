@@ -50,7 +50,7 @@
 </div>
 <!-- Navigation -->
 <nav style="background-color: {{ primary_color }}" class="groups-navigation navbar navbar-dark navbar-expand-md fixed-top shadow-sm">
-    <a class="groups-brand navbar-brand d-none d-md-block" href="{% if (goal === "show") %}/?page=home{% else %}/{{ name }}/home{% endif %}">
+    <a class="groups-brand navbar-brand d-none d-md-block" href="{% if (goal === "show") %}/?page=index{% else %}/{{ name }}{% endif %}">
         <!--
             You can place your logo here.
             Any text or image is okay to use.
@@ -65,7 +65,7 @@
         <!-- Menu -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item{% if (title==="Home") %} active{% endif %}">
-                <a class="nav-link" href="{% if (goal==="show") %}/?page=home{% else %}/{{ name }}/home{% endif %}">Home</a>
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=index{% else %}/{{ name }}{% endif %}">Home</a>
             </li>
             <li class="nav-item{% if (title==="Members") %} active{% endif %}">
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=members{% else %}/{{ name }}/members{% endif %}">Members</a>
