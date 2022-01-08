@@ -68,20 +68,20 @@
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=index{% else %}/{{ name }}{% endif %}">Home</a>
             </li>
             <li class="nav-item{% if (title==="Members") %} active{% endif %}">
-                <a class="nav-link" href="{% if (goal==="show") %}/?page=members{% else %}/{{ name }}/members{% endif %}">Members</a>
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=members{% else %}/{{ name }}/members.html{% endif %}">Members</a>
             </li>
             {% if (module_groups==="on") %}
             <li class="nav-item{% if (title==="Groups") %} active{% endif %}">
-                <a class="nav-link" href="{% if (goal==="show") %}/?page=groups{% else %}/{{ name }}/groups{% endif %}">Groups</a>
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=groups{% else %}/{{ name }}/groups.html{% endif %}">Groups</a>
             </li>
             {% endif %}
             {% if (module_forum==="on") %}
             <li class="nav-item{% if (title==="Forum") %} active{% endif %}">
-                <a class="nav-link" href="{% if (goal==="show") %}/?page=forum{% else %}/{{ name }}/forum{% endif %}">Forum</a>
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=forum{% else %}/{{ name }}/forum.html{% endif %}">Forum</a>
             </li>
             {% endif %}
             <li class="nav-item{% if (title==="Messages") %} active{% endif %}">
-                <a class="nav-link" href="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages{% endif %}">Inbox</a>
+                <a class="nav-link" href="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages.html{% endif %}">Inbox</a>
             </li>
             <li class="nav-item dropdown private-feature">
                 <a class="groups-settings-button nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -91,14 +91,14 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu">
-                    <!--<a class="dropdown-item" href="{% if (goal==="show") %}/?page=settings{% else %}/{{ name }}/account{% endif %}">General Settings</a>-->
-                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=account{% else %}/{{ name }}/account{% endif %}">Account Settings</a>
+                    <!--<a class="dropdown-item" href="{% if (goal==="show") %}/?page=settings{% else %}/{{ name }}/settings.html{% endif %}">General Settings</a>-->
+                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=account{% else %}/{{ name }}/account.html{% endif %}">Account Settings</a>
                     {% if (module_groups==="on") %}
-                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=create-group{% else %}/{{ name }}/create-group{% endif %}">Create Group...</a>
+                    <a class="dropdown-item" href="{% if (goal==="show") %}/?page=create-group{% else %}/{{ name }}/create-group.html{% endif %}">Create Group...</a>
                     {% endif %}
-                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=network-administration{% else %}/{{ name }}/network-administration{% endif %}">Network Administration</a>
-                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=member-administration{% else %}/{{ name }}/member-administration{% endif %}">Member Administration</a>
-                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=pending-members{% else %}/{{ name }}/pending-members{% endif %}">Pending Members</a>
+                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=network-administration{% else %}/{{ name }}/network-administration.html{% endif %}">Network Administration</a>
+                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=member-administration{% else %}/{{ name }}/member-administration.html{% endif %}">Member Administration</a>
+                    <a class="dropdown-item admin-feature" href="{% if (goal==="show") %}/?page=pending-members{% else %}/{{ name }}/pending-members.html{% endif %}">Pending Members</a>
                 </div>
             </li>
         </ul>
@@ -106,10 +106,10 @@
     <div class="groups-controls">
     <!--
         <div class="groups-notifications private-feature">
-            <graphjs-notifications target-profile="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile?{% endif %}id=[[id]]" target-feed-item="{% if (goal==="show") %}/?page=feed&{% else %}/{{ name }}/feed?{% endif %}id=[[id]]" target-messages="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages{% endif %}" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-notifications>
+            <graphjs-notifications target-profile="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile.html?{% endif %}id=[[id]]" target-feed-item="{% if (goal==="show") %}/?page=feed&{% else %}/{{ name }}/feed.html?{% endif %}id=[[id]]" target-messages="{% if (goal==="show") %}/?page=messages{% else %}/{{ name }}/messages.html{% endif %}" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-notifications>
         </div>
     -->
-        <graphjs-auth target="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile?{% endif %}id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-auth>
+        <graphjs-auth target="{% if (goal==="show") %}/?page=profile&{% else %}/{{ name }}/profile.html?{% endif %}id=[[id]]" position="topright" color="rgba(255, 255, 255, .65)" height="40px" box="disabled"></graphjs-auth>
     </div>
 </nav>
 
@@ -144,7 +144,7 @@
             checkLogin();
             showAdministrationOptions();
             if(just_registered)
-                window.location.href = "{% if (goal==="show") %}/?page=account&{% else %}/{{ name }}/account{% endif %}";
+                window.location.href = "{% if (goal==="show") %}/?page=account&{% else %}/{{ name }}/account.html{% endif %}";
         });
 
         window.GraphJS.on("afterLogout", function() {
